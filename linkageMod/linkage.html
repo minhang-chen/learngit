@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>城镇选择</title>
+	<style type="text/css">
+		a{
+			text-decoration: none;
+			color: #ccc;
+		}
+
+		.m-city{
+			border: 1px solid #ccc;
+			width: 200px;
+			height: 25px;
+			position: relative;
+		}
+
+		.m-city .u-city-show{
+			height: 25px;
+		}
+
+		.m-city .u-city-select{
+			width: 200px;
+			border: 1px solid #ccc;
+			position: absolute;
+			top: 25px;
+			left: -1px;
+		}
+
+		.city-select-tab{
+			
+		}
+
+		.city-select-tab a{
+			padding:10px 9px;
+			display: inline-block;
+			background: #f0f0f0;
+			color: #333;
+		}
+
+		.city-select-tab .after-click{
+			background: #fff;
+		}
+
+		.ss{
+			padding:0 10px;
+			color: #000;
+			font-size: 12px;
+			cursor: pointer;
+			display: inline-block;
+		}
+
+		.city{
+			width: 100%;
+			display: none;
+
+		}
+
+		.County{
+			width: 100%;
+			display: none;
+		}
+		
+		.address{
+			width: 100%;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+<div class="m-city">
+	<div class="u-city-show"></div>
+	<div class="u-city-select">
+		<div class="city-select-tab">
+			<a index="0" class="after-click" href="javascript:;">省份
+			</a><a index="1" href="javascript:;">城市
+			</a><a index="2" href="javascript:;">县区
+			</a><a index="3" href="javascript:;">街道</a>
+		</div>
+		<div class="city-select-infor">
+			<div style="display:block" class="province"></div>
+			<div style="display:none" class="city"></div>
+			<div style="display:none" class="county"></div>
+			<div style="display:none" class="address"></div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src='util.js'></script>
+<script type="text/javascript" src="linkage.js"></script>
+<script type="text/javascript">
+	var linkage = new Linkage('Citys.json');
+	linkage.readData();
+	linkage.importData();
+</script>
+</body>
+</html>
